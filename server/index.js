@@ -17,19 +17,7 @@ const Classify = async () => {
   const model = await mobileNet.load();
   const tensor = await getImgTensor('eagle.JPEG');
   return await model.classify(tensor);
-
 }
 
 Classify()
   .then(prediction => console.log(prediction))
-
-
-// const decodeImage = async(rawJpegData) => {
-//   return tf.node.decodeImage(rawJpegData);
-// }
-// getImgBuffer('eagle.JPEG')
-//   .then((imgData) => decodeImage(imgData.data))
-//   .then((tensor) => console.log(tensor));
-
-// const model = mobileNet.load()
-//   .then(console.log('model loaded'));
