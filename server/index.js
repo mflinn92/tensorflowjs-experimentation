@@ -1,9 +1,8 @@
 const tf = require('@tensorflow/tfjs-node');
 const mobileNet = require('@tensorflow-models/mobilenet');
-const jpeg = require('jpeg-js');
 const fs = require('fs');
 const util = require('util');
-const path = require('path');
+
 
 const readFile = util.promisify(fs.readFile);
 
