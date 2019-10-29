@@ -9,12 +9,11 @@ const readFile = util.promisify(fs.readFile);
 
 const getImgTensor = async (filePath) => {
   let jpegData = await readFile(filePath);
-  let tensor = tf.node.decodeImage(jpegData);
-  return tensor
+  return tf.node.decodeImage(jpegData);
 }
 
 
-const Classify = async() => {
+const Classify = async () => {
   const model = await mobileNet.load();
   const tensor = await getImgTensor('eagle.JPEG');
   return await model.classify(tensor);
